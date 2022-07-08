@@ -18,7 +18,7 @@ function Header() {
             </nav>
             <div onClick={() => dispatch(toggleCart())} className="ml-5 relative cursor-pointer">
               <HiOutlineShoppingBag className="text-xl"/>
-              <div className="absolute right-[-0.30rem] top-[-0.5rem] w-[15px] h-[15px] rounded-full bg-red-400 text-white flex justify-center items-center"><span className="text-xs">{totolItem && totolItem}</span></div>
+              <div className="absolute right-[-0.30rem] top-[-0.5rem] w-[15px] h-[15px] rounded-full bg-red-400 text-white flex justify-center items-center"><span className="text-xs" data-testId="cartCount">{totolItem && totolItem}</span></div>
             </div>
         </div>
     </header>

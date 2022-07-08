@@ -16,7 +16,7 @@ function CartSidebar() {
     0
   );
   const checkoutHandler = () => {
-    alert(`Total price is: ${totalPrice}€`)
+    alert(`Total price is: ${totalPrice}`)
   }
 
   const fade = {
@@ -55,12 +55,14 @@ function CartSidebar() {
         initial="hidden"
         exit={slide.exit}
         className="absolute right-0 top-0 w-screen md:w-[350px] h-screen bg-white z-50 shadow-lg p-4 m-0 overflow-hidden flex flex-col"
+        data-setId="cartWrapper"
       >
         
           <div className="flex justify-end">
             <VscChromeClose
               className="cursor-pointer"
               onClick={() => dispatch(toggleCart())}
+              data-testId="closeCart"
             />
           </div>
           <h2 className="text-lg font-bold mb-3 text-center tracking-wide">{`You have ${

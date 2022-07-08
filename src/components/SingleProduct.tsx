@@ -37,7 +37,7 @@ const SingleProduct: React.FC<Props> = (props) => {
 
   return (
     
-    <div className="w-full md:w-[250px] h-full flex flex-col p-2 overflow-hidden">
+    <div className="w-full md:w-[250px] h-full flex flex-col p-2 overflow-hidden" data-testId={`${_id}`}>
       <Link to={`/${_id}`}>
         <div className="w-full md:w-[220px] h-auto md:h-[150px] relative overflow-hidden">
             <img src={url} alt={name} className="w-full h-full object-contain"/>
@@ -45,7 +45,7 @@ const SingleProduct: React.FC<Props> = (props) => {
         <div className="px-1">
 
         
-        <p className="text-gray-500 mt-7 flex-1 text-sm">{name}</p>
+        <p className="text-gray-500 mt-7 flex-1 text-sm" data-testId="productName">{name}</p>
     
         <p className="mt-2 mb-3 font-semibold">{price} €</p>
         </div>
@@ -53,10 +53,10 @@ const SingleProduct: React.FC<Props> = (props) => {
 
         {
           isItemInCart(cartItems, _id) ? (
-            <button onClick={openCart} className="py-2 px-4 w-full bg-black text-white border border-black transition duration-150 hover:bg-white hover:text-black">In Cart</button>
+            <button onClick={openCart} className="py-2 px-4 w-full bg-black text-white border border-black transition duration-150 hover:bg-white hover:text-black" data-testId="addToCart">In Cart</button>
 
           ): (
-            <button onClick={cartHandler} className="py-2 px-4 w-full bg-black text-white border border-black transition duration-150 hover:bg-white hover:text-black">Add To Cart</button>
+            <button onClick={cartHandler} className="py-2 px-4 w-full bg-black text-white border border-black transition duration-150 hover:bg-white hover:text-black" data-testId="addToCart">Add To Cart</button>
           )
 
         }
